@@ -1,4 +1,4 @@
 class Purchase < ApplicationRecord
-  belongs_to :ipod
   belongs_to :user
+  belongs_to :ipod
 end
