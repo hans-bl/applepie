@@ -1,2 +1,14 @@
-<h1>Ipods#new</h1>
-<p>Find me in app/views/ipods/new.html.erb</p>
+<h1>List a new iPod</h1>
+<p>This iPod will be listed on the platform.</p>
+
+<%= simple_form_for @ipod do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :model %>  <%# Choose between pre-defined models %>
+  <%= f.input :color %>  <%# Choose between pre-defined colors %>
+  <%= f.input :capacity %>  <%# Choose between pre-defined capacities %>
+  <%= f.input :state %> <%# Choose between pre-defined states %>
+  <%= f.input :price %>
+  <%# Add a picture %>
+  <%= f.submit "Create", class: "btn btn-primary" %>
+<% end %>
