@@ -11,8 +11,12 @@ class IpodsController < ApplicationController
 
   def create
     @ipod = Ipod.new(ipod_params)
-    @ipod.save
-    redirect_to ipod_path(@ipod)
+    @ipod.user = current_user
+    if @ipod.save
+      redirect_to ipod_path(@ipod)
+    else
+      render :new
+    end
   end
 
   def update
