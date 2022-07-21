@@ -19,10 +19,17 @@ class IpodsController < ApplicationController
     end
   end
 
-  def update
+  def edit
+    @ipod = Ipod.find(params[:id])
   end
 
-  def edit
+  def update
+    @ipod = Ipod.find(params[:id])
+    if @ipod.update(ipod_params)
+      redirect_to ipod_path(@ipod)
+    else
+      render :edit
+    end
   end
 
   private
