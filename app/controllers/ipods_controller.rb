@@ -1,5 +1,6 @@
 class IpodsController < ApplicationController
   def index
+    @ipod = Ipod.all
   end
 
   def show
