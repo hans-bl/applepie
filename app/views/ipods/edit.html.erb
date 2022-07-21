@@ -1,2 +1,14 @@
-<h1>Ipods#edit</h1>
-<p>Find me in app/views/ipods/edit.html.erb</p>
+<h1>Update your iPod</h1>
+<p>This iPod will be updated right away.</p>
+
+<%= simple_form_for @ipod do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :model, collection: [ "iPod Classic", "iPod Mini", "iPod Nano", "iPod Shuffle", "iPod Touch" ] %>  <%# Choose between pre-defined models %>
+  <%= f.input :color, collection: [ "Grey", "Black", "White", "Blue", "Green", "Pink" ] %>  <%# Choose between pre-defined colors %>
+  <%= f.input :capacity, collection: [ 16, 32, 64, 128, 256 ] %>  <%# Choose between pre-defined capacities %>
+  <%= f.input :state, collection: [ "Fair", "Good", "Excellent" ] %> <%# Choose between pre-defined states %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>
