@@ -24,6 +24,6 @@ class IpodsController < ApplicationController
   private
 
   def ipod_params
-    params.require(:ipod).permit(:name, :description, :model, :color, :state, :ipod_picture_url, :price, :capacity)
+    params.require(:ipod).permit(:name, :description, :model, :color, :state, :photo, :price, :capacity)
   end
 end
