@@ -1,2 +1,9 @@
-<h1>Ipods#index</h1>
-<p>Find me in app/views/ipods/index.html.erb</p>
+<%= link_to "Add new ipod", new_ipod_path  %>
+
+<% @ipod.each do |ipod| %>
+  <%= cl_image_tag ipod.photo.key, height: 300, width: 400, crop: :fill %>
+  <h3><%= ipod.name %></h3>
+  <p><%= ipod.name %></p>
+  <p><%= ipod.description %></p>
+  <p><%= ipod.model %></p>
+<% end %>
