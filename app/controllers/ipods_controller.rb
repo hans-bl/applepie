@@ -1,6 +1,8 @@
 class IpodsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def index
-    @ipod = Ipod.all
+    @ipods = Ipod.all
   end
 
   def show

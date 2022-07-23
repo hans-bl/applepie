@@ -1,4 +1,9 @@
-<%= cl_image_tag @ipod.photo.key, height: 300, width: 400, crop: :fill %>
+<% if @ipod.photo.attached? %>
+  <%= cl_image_tag @ipod.photo.key, height: 500, width: 400, crop: :fill %>
+<% else %>
+  <%= image_tag "#{@ipod.model}.png" %>
+<% end %>
+
 <h1><%= @ipod.name %></h1>
 <p><%= @ipod.description %></p>
 

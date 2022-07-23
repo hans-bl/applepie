@@ -7,4 +7,9 @@ class User < ApplicationRecord
   has_many :ipods
   has_many :ipods, through: :purchases
   has_many :purchases
+
+  validates :first_name, :last_name, :email, :password, presence: true
+  # validates :first_name, :last_name, :email, :password, allow_blank: false
+  validates :email, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 end
