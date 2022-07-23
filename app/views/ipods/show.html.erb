@@ -1,2 +1,16 @@
-<h1>Ipods#show</h1>
-<p>Find me in app/views/ipods/show.html.erb</p>
+<%= cl_image_tag @ipod.photo.key, height: 300, width: 400, crop: :fill %>
+<h1><%= @ipod.name %></h1>
+<p><%= @ipod.description %></p>
+
+<h2>Model</h2>
+<p><%= @ipod.model %></p>
+<h2>State</h2>
+<p><%= @ipod.state %></p>
+<h2>Color</h2>
+<p><%= @ipod.color %></p>
+<h2>Capacity</h2>
+<p><%= @ipod.capacity %></p>
+<h2>Price</h2>
+<p><%= @ipod.price %></p>
+
+<%= link_to "Back to index", ipods_path, class: "btn btn-primary"  %>
