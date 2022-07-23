@@ -4,6 +4,7 @@ class IpodsController < ApplicationController
   end
 
   def show
+    @ipod = Ipod.find(params[:id])
   end
 
   def new

@@ -1,9 +1,11 @@
 <%= link_to "Add new ipod", new_ipod_path  %>
 
+<br>
+
 <% @ipod.each do |ipod| %>
   <%= cl_image_tag ipod.photo.key, height: 300, width: 400, crop: :fill %>
   <h3><%= ipod.name %></h3>
-  <p><%= ipod.name %></p>
   <p><%= ipod.description %></p>
   <p><%= ipod.model %></p>
+  <%= link_to "Details", ipod_path(ipod)  %>
 <% end %>
