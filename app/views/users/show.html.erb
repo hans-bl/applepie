@@ -1,3 +1,11 @@
 <h3>Hello <%= current_user.first_name %>, welcome to Applepie 🍰</h3>
 <p><%= current_user.first_name %> <%= current_user.last_name %></p>
 <p><%= current_user.email %></p>
+
+<h3>My purchases</h3>
+<% current_user.purchases.each do |purchase| %>
+  <p>Status: <%= purchase.status %></p>
+  <p>Delivery address: <%= purchase.delivery_address %></p>
+  <p>Phone number: <%= purchase.phone_number %></p>
+  <p>Message: <%= purchase.message %></p>
+<% end %>
