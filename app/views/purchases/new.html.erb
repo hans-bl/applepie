@@ -1,2 +1,7 @@
-<h1>Purchases#new</h1>
-<p>Find me in app/views/purchases/new.html.erb</p>
+<%= simple_form_for [@ipod, @purchase] do |f| %>
+  <%= f.input :status %>
+  <%= f.input :delivery_address %>
+  <%= f.input :phone_number %>
+  <%= f.input :message %>
+  <%= f.submit "Buy", class: "btn btn-primary" %>
+<% end %>
