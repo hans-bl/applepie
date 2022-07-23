@@ -1,9 +1,7 @@
-<%= link_to "Add new ipod", new_ipod_path  %>
-
-<br>
+<%= link_to "Add new ipod", new_ipod_path, class:'mb-5'  %>
 
 <% @ipods.each do |ipod| %>
-  <% if ipod.photo.attached? %>
+<% if ipod.photo.attached? %>
     <%= cl_image_tag ipod.photo.key, height: 500, width: 400, crop: :fill %>
   <% else %>
     <%= image_tag "#{ipod.model}.png" %>
@@ -11,6 +9,6 @@
   <h3><%= ipod.name %></h3>
   <p><%= ipod.description %></p>
   <p><%= ipod.model %></p>
-  <%= link_to "Details", ipod_path(ipod)  %>
-  <%= link_to "Buy", new_ipod_purchase_path(ipod)  %>
+  <%= link_to "Details", ipod_path(ipod), class:'btn btn-link'  %>
+  <%= link_to "Buy", new_ipod_purchase_path(ipod), class:'btn btn-primary'  %>
 <% end %>
