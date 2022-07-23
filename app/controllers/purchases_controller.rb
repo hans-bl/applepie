@@ -19,6 +19,6 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase).permit(:status, :delivery_address, :phone_number, :message)
+    params.require(:purchase).permit(:delivery_address, :phone_number, :message)
   end
 end
