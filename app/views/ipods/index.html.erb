@@ -1,16 +1,22 @@
-<%= link_to "Add new ipod", new_ipod_path  %>
+<%= link_to "Add new ipod", new_ipod_path, class:'btn btn-primary mb-5'  %>
 
-<br>
-
-<% @ipods.each do |ipod| %>
-  <% if ipod.photo.attached? %>
-    <%= cl_image_tag ipod.photo.key, height: 500, width: 400, crop: :fill %>
-  <% else %>
-    <%= image_tag "#{ipod.model}.png" %>
+<div class="row">
+  <% @ipods.each do |ipod| %>
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <% if ipod.photo.attached? %>
+          <%= cl_image_tag ipod.photo.key, class:'card-img-top' %>
+        <% else %>
+          <%= image_tag "#{ipod.model}.png", class:'card-img-top' %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= ipod.name %></h5>
+          <p class="card-text"><%= ipod.description %></p>
+          <p class="card-text"><%= ipod.model %></p>
+          <%= link_to "Details", ipod_path(ipod), class:'btn btn-link'  %>
+          <%= link_to "Buy", new_ipod_purchase_path(ipod), class:'btn btn-primary'  %>
+        </div>
+      </div>
+    </div>
   <% end %>
-  <h3><%= ipod.name %></h3>
-  <p><%= ipod.description %></p>
-  <p><%= ipod.model %></p>
-  <%= link_to "Details", ipod_path(ipod)  %>
-  <%= link_to "Buy", new_ipod_purchase_path(ipod)  %>
-<% end %>
+</div>

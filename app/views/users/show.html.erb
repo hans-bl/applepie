@@ -4,7 +4,9 @@
 
 <h3>My purchases</h3>
 <% current_user.purchases.each do |purchase| %>
+  <p>Status: <%= purchase.state %></p>
   <p>Delivery address: <%= purchase.delivery_address %></p>
   <p>Phone number: <%= purchase.phone_number %></p>
   <p>Message: <%= purchase.message %></p>
+  <p>------------------</p>
 <% end %>

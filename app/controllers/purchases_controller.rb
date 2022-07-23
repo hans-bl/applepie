@@ -9,6 +9,7 @@ class PurchasesController < ApplicationController
     @ipod = Ipod.find(params[:ipod_id])
     @purchase.ipod = @ipod
     @purchase.user = current_user
+    @purchase.pending!
     if @purchase.save
       redirect_to user_path(current_user)
     else
