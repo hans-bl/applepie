@@ -5,10 +5,27 @@
     <%= link_to "Start selling", new_ipod_path, class:'btn btn-dark mt-3'  %>
   </div>
 </div>
-<section class="section content">
+
+<div class="section content" id="index">
   <div class="row mb-5">
-    <span class="section-highline">Our shop</span>
-    <h3 class="section-title">Here are our best seller <br> from the stock</h3>
+    <div class="col-5">
+      <span class="section-highline">Our shop</span>
+      <h3 class="section-title mb-2">Here are our best seller from the stock</h3>
+      <div class="row g-2 mb-5">
+          <div class="col-auto">
+            <%= form_tag ipods_path(anchor: "index"), method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find an iPod"
+            %>
+          </div>
+          <div class="col-auto">
+            <%= submit_tag "Search", class: "btn btn-dark" %>
+            <% end %>
+          </div>
+      </div>
+    </div>
   </div>
   <div class="row mb-3">
     <% @ipods.each do |ipod| %>
