@@ -5,13 +5,12 @@
     <%= link_to "Start selling", new_ipod_path, class:'btn btn-dark mt-3'  %>
   </div>
 </div>
-
-<div class="section content">
+<section class="section content">
   <div class="row mb-5">
     <span class="section-highline">Our shop</span>
     <h3 class="section-title">Here are our best seller <br> from the stock</h3>
   </div>
-  <div class="row">
+  <div class="row mb-3">
     <% @ipods.each do |ipod| %>
       <div class="col-md-3">
         <div class="card" style="width: 14rem;">
@@ -28,8 +27,9 @@
           <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= ipod.name %></h5>
-            <div class="d-flex justify-content-between mt-2">
-              <span><%= ipod.price %>€</span>
+            <span class="card-text"><%= ipod.description %></span>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <span class="price"><%= ipod.price %>€</span>
               <div class="color d-inline-flex">
                 <span class="card-text me-2">color:</span>
                 <% if ipod.color == 'White' %>
@@ -47,14 +47,46 @@
                 <% end %>
               </div>
             </div>
-            <p class="card-text"><%= ipod.description %></p>
-            <div class="d-flex justify-content-between mt-2">
-              <%= link_to "See more", ipod_path(ipod), class:'btn btn-outline-dark' %>
-              <%= link_to "Buy", new_ipod_purchase_path(ipod), class:'btn btn-dark ' %>
+            <div class="action-row">
+              <%= link_to ipod_path(ipod), class:'btn btn-dark me-2' do %>
+                <%= image_tag 'icon-eye.svg', alt: 'show icon', class: 'action-icon' %>
+              <% end %>
+              <%= link_to new_ipod_purchase_path(ipod), class:'btn btn-dark' do %>
+                <%= image_tag 'icon-shop.svg', alt: 'buy icon', class: 'action-icon' %>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-</div>
+</section>
+<section class="d-flex mb-4 text-bg-dark hero-content-sm">
+  <div class="col-md-4 px-0 hero-content">
+    <h1>Get inspired from our Instagram</h1>
+    <p class="lead my-3">If you use the hashtag #applepie on Instagram, we’ll spotlight you.</p>
+    <span class="call-to-action">Check it out</span>
+  </div>
+</section>
+<section class="reviews">
+  <div class="row">
+    <div class="col">
+      <div class="reviews-image"></div>
+    </div>
+    <div class="col">
+      <div class="reviews-carousel">
+        <span class="flag mb-3">Reviews</span>
+        <span class="trusted-content mb-2">Shop with confidance by reading customer
+              reviews given by individuals who have used
+              applepie. Excelent quality and streamlined
+              service are both offered here.
+        </span>
+        <%= image_tag 'reviews-star.svg', alt: 'rating stars', class: 'rating-stars mb-3' %>
+        <span class="counter mb-3">2.479 reviews</span>
+        <h3 class="review-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h3>
+        <span class="author">Michael P.</span>
+        <span class="locale">Lake Forest, CA</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+.reviews {
+  .reviews-image {
+    height: 33rem;
+    padding: 2rem 6rem;
+    border-radius: 3rem;
+    background-image: url(reviews-left-img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .reviews-carousel {
+    height: 33rem;
+    padding: 3rem 5rem;
+    border-radius: 3rem;
+    background-color: $light-gray;
+  }
+}
+
+.reviews-carousel {
+  display: flex;
+  flex-direction: column;
+
+  .flag {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .trusted-content {
+    max-width: 300px;
+    font-weight: 300;
+    font-weight: .875rem;
+    color: darken($color: $light-gray, $amount: 40);
+  }
+  .rating-stars {
+    display: block;
+    width: 180px;
+    height: auto;
+  }
+  .counter {
+    font-size: .775rem;
+  }
+  .review-content {
+    font-weight: 300;
+  }
+  .author {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .locale {
+    font-size: .8rem;
+  }
+}
