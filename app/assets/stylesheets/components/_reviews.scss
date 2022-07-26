@@ -5,7 +5,7 @@
     border-radius: 3rem;
     background-image: url(reviews-left-img.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
   }
   .reviews-carousel {
@@ -21,6 +21,7 @@
   flex-direction: column;
 
   .flag {
+    margin-top: 1rem;
     text-transform: uppercase;
     font-weight: 500;
   }
