@@ -2,7 +2,12 @@ class IpodsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @ipods = Ipod.all
+    # @ipods = Ipod.all
+    if params[:query].present?
+      @ipods = Ipod.search_by_name_and_model(params[:query])
+    else
+      @ipods = Ipod.all
+    end
   end
 
   def show

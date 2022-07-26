@@ -18,4 +18,11 @@ class Ipod < ApplicationRecord
   validates :capacity, inclusion: {
     in: [16, 32, 64, 128, 256]
   }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_model,
+    against: [ :name, :model ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
