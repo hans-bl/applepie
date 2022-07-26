@@ -1,2 +1,32 @@
-// Import page-specific CSS files here.
-@import "home";
+.hero {
+  height: 33rem;
+  padding: 2rem 6rem;
+  background-color: $light-gray;
+  border-radius: 3rem;
+  background-image: url(index-hero-background.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+
+  h1 {
+    font-size: 3.8rem;
+    font-weight: 500;
+  }
+
+  p.lead {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+}
+
+.section-highline {
+  text-transform: uppercase;
+  font-size: .875rem;
+  font-weight: 300;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-top: 1rem;
+  line-height: 1.5;
+}

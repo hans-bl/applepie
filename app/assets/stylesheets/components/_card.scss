@@ -1,8 +1,91 @@
 .card{
   margin: .5rem;
+  border: none;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: .3s all;
+  }
 }
 
-.card-img-top{
-  height: 140px;
-  object-fit: cover;
+.card-img-top-wrapper {
+  position: relative;
+
+  .card-text-model {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background-color: rgba($color: $light-gray, $alpha: 0.8);
+    color: #000000;
+    font-size: .75rem;
+    padding: .2rem .5rem;
+    border-radius: .3rem;
+  }
+
+  .card-img-top{
+    height: 196px;
+    width: 216px;
+    border-radius: 2rem;
+    object-fit: cover;
+    background-color: $light-gray;
+  }
+}
+
+
+.card-title {
+  text-transform: uppercase;
+  font-size: .875rem;
+}
+
+.card-text {
+  color: darken($color: $light-gray, $amount: 60);
+  font-size: .8rem;
+  margin-bottom: 0;
+  font-weight: 300;
+  // Line-clamp
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.color {
+
+  .color-white {
+    width: 18px;
+    height: 18px;
+    border-radius: 50px;
+    background-color: #fff;
+    border: 2px solid rgb(221, 221, 221);
+  }
+  .color-grey {
+    width: 18px;
+    height: 18px;
+    border-radius: 50px;
+    background-color: #E5E4EA;
+  }
+  .color-black {
+    width: 18px;
+    height: 18px;
+    border-radius: 50px;
+    background-color: #000000;
+  }
+  .color-blue {
+    width: 18px;
+    height: 18px;
+    border-radius: 50px;
+    background-color: #4182E6;
+  }
+  .color-green {
+    width: 18px;
+    height: 18px;
+    border-radius: 50px;
+    background-color: #D4D555;
+  }
+  .color-pink {
+    width: 18px;
+    height: 18px;
+    border-radius: 50px;
+    background-color: #E384E4;
+  }
 }
