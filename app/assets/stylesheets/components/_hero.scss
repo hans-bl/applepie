@@ -1,0 +1,48 @@
+.hero {
+  height: 33rem;
+  padding: 2rem 6rem;
+  background-color: $light-gray;
+  border-radius: 3rem;
+  background-image: url(index-hero-background.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+
+  h1 {
+    font-size: 3.8rem;
+    font-weight: 500;
+  }
+
+  p.lead {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+}
+
+.hero-content-sm {
+  height: 33rem;
+  padding: 2rem 6rem;
+  border-radius: 3rem;
+  background-image: url(opt-workable-space.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .hero-content {
+    margin-top: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  p.lead {
+    font-size: .875rem;
+    font-weight: 300;
+  }
+
+  .call-to-action {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+}

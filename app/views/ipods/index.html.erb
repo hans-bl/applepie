@@ -27,7 +27,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row mb-3">
     <% @ipods.each do |ipod| %>
       <div class="col-md-3">
         <div class="card" style="width: 14rem;">
@@ -44,8 +44,9 @@
           <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= ipod.name %></h5>
-            <div class="d-flex justify-content-between mt-2">
-              <span><%= ipod.price %>€</span>
+            <span class="card-text"><%= ipod.description %></span>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <span class="price"><%= ipod.price %>€</span>
               <div class="color d-inline-flex">
                 <span class="card-text me-2">color:</span>
                 <% if ipod.color == 'White' %>
@@ -63,14 +64,50 @@
                 <% end %>
               </div>
             </div>
-            <p class="card-text"><%= ipod.description %></p>
-            <div class="d-flex justify-content-between mt-2">
-              <%= link_to "See more", ipod_path(ipod), class:'btn btn-outline-dark' %>
-              <%= link_to "Buy", new_ipod_purchase_path(ipod), class:'btn btn-dark ' %>
+            <div class="action-row">
+              <%= link_to ipod_path(ipod), class:'btn btn-dark me-2' do %>
+                <%= image_tag 'icon-eye.svg', alt: 'show icon', class: 'action-icon' %>
+              <% end %>
+              <%= link_to new_ipod_purchase_path(ipod), class:'btn btn-dark' do %>
+                <%= image_tag 'icon-shop.svg', alt: 'buy icon', class: 'action-icon' %>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-</div>
+</section>
+<section class="d-flex mb-4 text-bg-dark hero-content-sm">
+  <div class="col-md-4 px-0 hero-content">
+    <h1>Get inspired from our Instagram</h1>
+    <p class="lead my-3">If you use the hashtag #applepie on Instagram, we’ll spotlight you.</p>
+    <span class="call-to-action">Check it out</span>
+  </div>
+</section>
+<section class="reviews">
+  <div class="row">
+    <div class="col">
+      <div class="reviews-image"></div>
+    </div>
+    <div class="col">
+      <div class="reviews-carousel">
+        <span class="flag mb-3">Reviews</span>
+        <span class="trusted-content mb-2">Shop with confidance by reading customer
+              reviews given by individuals who have used
+              applepie. Excelent quality and streamlined
+              service are both offered here.
+        </span>
+        <%= image_tag 'reviews-star.svg', alt: 'rating stars', class: 'rating-stars mb-3' %>
+        <span class="counter mb-3">2.479 reviews</span>
+        <h3 class="review-content">Great iPod, whatever the microphone is giving me problems, I hope it's nothing and if I see the problem persists I'll have to take it to have it checked</h3>
+        <span class="author">Michael P.</span>
+        <span class="locale">Lake Forest, CA</span>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+    <%= image_tag 'applepie-logotype.svg', alt: 'Applepie logotype', class: 'logotype' %>
+    <span class="copyright">Copyright © 2022 applepie All rights Reserved.</span>
+</footer>

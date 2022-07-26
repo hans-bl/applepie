@@ -1,9 +1,35 @@
 .card{
   margin: .5rem;
+  min-height: 22rem;
   border: none;
 
-  &:hover {
+  &:hover .card-img-top {
     transform: scale(1.05);
+    transition: .3s all;
+  }
+
+  .action-row {
+    position: relative;
+    top: .5rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: .5rem;
+    opacity: 0;
+
+    .btn.btn-dark {
+      background-color: rgba(45, 45, 45, .8);
+      border: none;
+    }
+
+    .action-icon {
+      height: 16px;
+      width: auto;
+    }
+  }
+
+  &:hover .action-row {
+    top: 0rem;
+    opacity: 1;
     transition: .3s all;
   }
 }
@@ -15,6 +41,7 @@
     position: absolute;
     top: 1.5rem;
     right: 2rem;
+    z-index: 10;
     background-color: rgba($color: $light-gray, $alpha: 0.8);
     color: #000000;
     font-size: .75rem;
@@ -41,16 +68,17 @@
   color: darken($color: $light-gray, $amount: 60);
   font-size: .8rem;
   margin-bottom: 0;
+  margin-top: .5rem;
   font-weight: 300;
   // Line-clamp
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .color {
-
+  align-items: center;
   .color-white {
     width: 18px;
     height: 18px;

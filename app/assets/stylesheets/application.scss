@@ -9,8 +9,13 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Your CSS partials
+// Components
 @import "components/index";
 @import "components/card";
+@import "components/hero";
+@import "components/reviews";
+@import "components/footer";
+
+// Pages
 @import "pages/index";
 @import "pages/show";
