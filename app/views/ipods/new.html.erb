@@ -1,14 +1,21 @@
-<h1>List a new iPod</h1>
-<p>This iPod will be listed on the platform.</p>
+<div class="row">
+  <div class="col-6 p-5">
+    <%= image_tag "new-hero.jpg", class: "img-fluid rounded rounded-3" %>
+  </div>
+  <div class="col-6 p-5">
+    <h1>List a new iPod</h1>
+    <p>This iPod will be listed on the platform.</p>
 
-<%= simple_form_for @ipod do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :model, collection: [ "iPod Classic", "iPod Mini", "iPod Nano", "iPod Shuffle", "iPod Touch" ] %>  <%# Choose between pre-defined models %>
-  <%= f.input :color, collection: [ "Grey", "Black", "White", "Blue", "Green", "Pink" ] %>  <%# Choose between pre-defined colors %>
-  <%= f.input :capacity, collection: [ 16, 32, 64, 128, 256 ] %>  <%# Choose between pre-defined capacities %>
-  <%= f.input :state, collection: [ "Fair", "Good", "Excellent" ] %> <%# Choose between pre-defined states %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Create", class: "btn btn-primary" %>
-<% end %>
+    <%= simple_form_for @ipod do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :model, collection: [ "iPod Classic", "iPod Mini", "iPod Nano", "iPod Shuffle", "iPod Touch" ] %>  <%# Choose between pre-defined models %>
+      <%= f.input :color, collection: [ "Grey", "Black", "White", "Blue", "Green", "Pink" ] %>  <%# Choose between pre-defined colors %>
+      <%= f.input :capacity, collection: [ 16, 32, 64, 128, 256 ] %>  <%# Choose between pre-defined capacities %>
+      <%= f.input :state, collection: [ "Fair", "Good", "Excellent" ] %> <%# Choose between pre-defined states %>
+      <%= f.input :price %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Create", class: "btn btn-dark" %>
+    <% end %>
+  </div>
+</div>
