@@ -1,22 +1,60 @@
-<%= link_to "Add new ipod", new_ipod_path, class:'btn btn-primary mb-5'  %>
+<div class="d-flex mb-4 text-bg-dark hero">
+  <div class="col-md-5 px-0 my-auto hero-content">
+    <h1>Your sweet spot for iPods.</h1>
+    <p class="lead my-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, quisquam perferendis!</p>
+    <%= link_to "Start selling", new_ipod_path, class:'btn btn-dark mt-3'  %>
+  </div>
+</div>
 
-<div class="row">
-  <% @ipods.each do |ipod| %>
-    <div class="col-md-3">
-      <div class="card" style="width: 18rem;">
-        <% if ipod.photo.attached? %>
-          <%= cl_image_tag ipod.photo.key, class:'card-img-top' %>
-        <% else %>
-          <%= image_tag "#{ipod.model}.png", class:'card-img-top' %>
-        <% end %>
-        <div class="card-body">
-          <h5 class="card-title"><%= ipod.name %></h5>
-          <p class="card-text"><%= ipod.description %></p>
-          <p class="card-text"><%= ipod.model %></p>
-          <%= link_to "Details", ipod_path(ipod), class:'btn btn-link'  %>
-          <%= link_to "Buy", new_ipod_purchase_path(ipod), class:'btn btn-primary'  %>
+<div class="section content">
+  <div class="row mb-5">
+    <span class="section-highline">Our shop</span>
+    <h3 class="section-title">Here are our best seller <br> from the stock</h3>
+  </div>
+  <div class="row">
+    <% @ipods.each do |ipod| %>
+      <div class="col-md-3">
+        <div class="card" style="width: 14rem;">
+          <% if ipod.photo.attached? %>
+            <div class="card-img-top-wrapper">
+              <span class="card-text-model"><%= ipod.model %></span>
+              <%= cl_image_tag ipod.photo.key, class:'card-img-top' %>
+            </div>
+          <% else %>
+            <div class="card-img-top-wrapper">
+              <span class="card-text-model"><%= ipod.model %></span>
+              <%= image_tag "#{ipod.model}.png", class:'card-img-top' %>
+            </div>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= ipod.name %></h5>
+            <div class="d-flex justify-content-between mt-2">
+              <span><%= ipod.price %>€</span>
+              <div class="color d-inline-flex">
+                <span class="card-text me-2">color:</span>
+                <% if ipod.color == 'White' %>
+                  <div class="color-white"></div>
+                <% elsif ipod.color == 'Grey' %>
+                  <div class="color-grey"></div>
+                <% elsif ipod.color == 'Black' %>
+                  <div class="color-black"></div>
+                <% elsif ipod.color == 'Blue' %>
+                  <div class="color-blue"></div>
+                <% elsif ipod.color == 'Green' %>
+                  <div class="color-green"></div>
+                <% elsif ipod.color == 'Pink' %>
+                  <div class="color-pink"></div>
+                <% end %>
+              </div>
+            </div>
+            <p class="card-text"><%= ipod.description %></p>
+            <div class="d-flex justify-content-between mt-2">
+              <%= link_to "See more", ipod_path(ipod), class:'btn btn-outline-dark' %>
+              <%= link_to "Buy", new_ipod_purchase_path(ipod), class:'btn btn-dark ' %>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
