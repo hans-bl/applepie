@@ -1,0 +1,51 @@
+.profile-data {
+  margin: auto;
+  text-align: center;
+  position: relative;
+
+  .profile-icon{
+    width: 24px;
+    height: auto;
+    margin: auto;
+  }
+
+  .my-account {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+
+  .profile-data-content {
+    position: relative;
+    top: 2rem;
+  }
+}
+
+.profile-page-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: 2px solid #fff;
+}
+
+.user-name {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 0px;
+  margin-top: 1rem;
+}
+
+.user-email {
+  color: darken($color: $light-gray, $amount: 40);
+  font-size: 1rem;
+}
+
+.purchases {
+  display: flex;
+  margin-top: 8rem;
+}
+
+.container-profile {
+  max-width: 500px;
+  margin: auto;
+}
