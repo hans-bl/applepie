@@ -1,14 +1,49 @@
-<h1>Update your iPod</h1>
-<p>This iPod will be updated right away.</p>
+<div class="row">
+  <div class="col-6 p-5">
+    <% if @ipod.photo.attached? %>
+      <div class="card-img-top-wrapper">
+        <%= cl_image_tag @ipod.photo.key, class:'card-img' %>
+      </div>
+    <% else %>
+      <div class="card-img-top-wrapper">
+        <%= image_tag "#{@ipod.model}.jpg", class:'card-img' %>
+      </div>
+    <% end %>
+  </div>
+    <div class="col-6 p-5">
+      <h1>Update your iPod</h1>
+      <p>This iPod will be updated right away.</p>
 
-<%= simple_form_for @ipod do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :model, collection: [ "iPod Classic", "iPod Mini", "iPod Nano", "iPod Shuffle", "iPod Touch" ] %>  <%# Choose between pre-defined models %>
-  <%= f.input :color, collection: [ "Grey", "Black", "White", "Blue", "Green", "Pink" ] %>  <%# Choose between pre-defined colors %>
-  <%= f.input :capacity, collection: [ 16, 32, 64, 128, 256 ] %>  <%# Choose between pre-defined capacities %>
-  <%= f.input :state, collection: [ "Fair", "Good", "Excellent" ] %> <%# Choose between pre-defined states %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Update", class: "btn btn-primary" %>
-<% end %>
+      <%= simple_form_for @ipod do |f| %>
+        <div class="row g-3 ">
+          <div class="col-12">
+            <%= f.input :name %>
+          </div>
+          <div class="col-12 mt-0">
+            <%= f.input :description %>
+          </div>
+          <div class="col-6 mt-0">
+            <%= f.input :model, collection: [ "iPod Classic", "iPod Mini", "iPod Nano", "iPod Shuffle", "iPod Touch" ] %>  <%# Choose between pre-defined models %>
+          </div>
+          <div class="col-6 mt-0">
+            <%= f.input :color, collection: [ "Grey", "Black", "White", "Blue", "Green", "Pink" ] %>  <%# Choose between pre-defined colors %>
+          </div>
+          <div class="col-4 mt-0">
+            <%= f.input :capacity, collection: [ 16, 32, 64, 128, 256 ] %>  <%# Choose between pre-defined capacities %>
+          </div>
+          <div class="col-4 mt-0">
+            <%= f.input :state, collection: [ "Fair", "Good", "Excellent" ] %> <%# Choose between pre-defined states %>
+          </div>
+          <div class="col-4 mt-0">
+            <%= f.input :price %>
+          </div>
+          <div class="col-12 mt-0">
+            <%= f.input :photo, as: :file %>
+          </div>
+          <div class="d-grid">
+            <%= f.submit "Update", class: "btn btn-dark" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
