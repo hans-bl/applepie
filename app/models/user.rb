@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :ipods
   has_many :ipods, through: :purchases
   has_many :purchases
+  has_one_attached :photo
 
   validates :first_name, :last_name, :email, :password, presence: true
   # validates :first_name, :last_name, :email, :password, allow_blank: false
