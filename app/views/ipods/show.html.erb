@@ -2,7 +2,7 @@
   <% if @ipod.photo.attached? %>
     <%= cl_image_tag @ipod.photo.key, class:'image' %>
   <% else %>
-    <%= image_tag "#{@ipod.model}.png", class:'image'  %>
+    <%= image_tag "#{@ipod.model}.jpg", class:'image'  %>
   <% end %>
 
   <div class="content">
@@ -22,4 +22,5 @@
   </div>
 </div>
 
-<%= link_to "Back to index", ipods_path, class: "btn btn-primary"  %>
+<%= link_to "Back to index", ipods_path, class: "btn btn-outlined-dark"  %>
+<%= link_to "Edit", edit_ipod_path, class: "btn btn-dark"  %>
