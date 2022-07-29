@@ -46,3 +46,14 @@
     font-weight: 500;
   }
 }
+
+.hero-profile-banner {
+  position: absolute;
+  top: 0rem;
+  z-index: -1;
+  height: 16rem;
+  width: 100%;
+  background-image: url(user-profile-background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
