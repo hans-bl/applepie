@@ -49,3 +49,40 @@
   max-width: 500px;
   margin: auto;
 }
+
+.card-horizontal {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid $light-gray;
+
+  .purchase-status {
+    font-size: .85rem;
+    text-transform: capitalize;
+    color: darken($color: $light-gray, $amount: 60);
+    background-color: $light-gray;
+    padding: .2rem .5rem;
+    border-radius: .3rem;
+  }
+
+  .purchase-price {
+    font-size: 1.1rem;
+  }
+
+  .ipod-name {
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+
+  .purchase-details {
+    font-size: .875rem;
+    margin-bottom: .2rem;
+    font-weight: 400;
+    color: darken($color: $light-gray, $amount: 60);
+
+    .purchase-details-title {
+      font-weight: 500;
+    }
+  }
+}

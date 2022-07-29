@@ -5,7 +5,8 @@
     <span class="my-account">my account</span>
   </div>
   <div class="profile-data-content">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-page-avatar", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <%# TODO: insert dinamic image %>
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-page-avatar" %>
     <p class="user-name"><%= current_user.first_name %> <%= current_user.last_name %></p>
     <span class="user-email"><%= current_user.email %></span>
   </div>
@@ -18,15 +19,23 @@
       <span>My purchases</span>
     </div>
   </div>
+  <% current_user.purchases.each do |purchase| %>
+    <div class="card-horizontal">
+      <div class="d-flex justify-content-between">
+        <span class="purchase-status"><%= purchase.state %></span>
+        <%# TODO: insert dinamic price %>
+        <span class="purchase-price">$30,00</span>
+      </div>
+      <div class="d-flex flex-column mb-4">
+        <h3 class="ipod-name">My ipod mini</h3>
+        <span class="purchase-details"><span class="purchase-details-title">Address: </span><%= purchase.delivery_address %></span>
+        <span class="purchase-details"><span class="purchase-details-title">Phone: </span><%= purchase.phone_number %></span>
+        <span class="purchase-details"><span class="purchase-details-title">Message: </span><%= purchase.message %></span>
+      </div>
+    </div>
+  <% end %>
 
   <div class="selling">
+    <%# TODO %>
   </div>
 </div>
-
-<% current_user.purchases.each do |purchase| %>
-  <p>Status: <%= purchase.state %></p>
-  <p>Delivery address: <%= purchase.delivery_address %></p>
-  <p>Phone number: <%= purchase.phone_number %></p>
-  <p>Message: <%= purchase.message %></p>
-  <p>------------------</p>
-<% end %>
