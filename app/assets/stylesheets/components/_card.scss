@@ -64,6 +64,12 @@
   font-size: 1rem;
 }
 
+.card-img {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
 .card-text {
   color: darken($color: $light-gray, $amount: 60);
   font-size: .8rem;
