@@ -3,6 +3,7 @@ class IpodsController < ApplicationController
 
   def index
     # @ipods = Ipod.all
+    @categories = Category.all
     if params[:query].present?
       @ipods = Ipod.search_by_name_and_model(params[:query])
     else
@@ -44,6 +45,6 @@ class IpodsController < ApplicationController
   private
 
   def ipod_params
-    params.require(:ipod).permit(:name, :description, :model, :color, :state, :photo, :price, :capacity)
+    params.require(:ipod).permit(:name, :description, :category_id, :color, :state, :photo, :price, :capacity)
   end
 end

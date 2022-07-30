@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :purchases, only: [ :new, :create ]
   end
   resources :users, only: [ :new, :create, :show ]
+  resources :categories, only: [ :show ]
 end

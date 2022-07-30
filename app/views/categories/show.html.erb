@@ -1,44 +1,13 @@
 <div class="container d-flex mb-4 text-bg-dark hero">
   <div class="col-md-5 px-0 my-auto hero-content">
-    <h1>Your sweet spot for iPods.</h1>
-    <p class="lead my-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, quisquam perferendis!</p>
-    <%= link_to "Start selling", new_ipod_path, class:'btn btn-dark mt-3'  %>
+    <h1><%= @category.name %></h1>
+    <p class="lead my-3">All <%= @category.name %> are displayed here.</p>
   </div>
 </div>
 
-<div class="row mb-3">
-    <% @categories.each do |category| %>
-      <div class="col-md-3">
-        <%= link_to category.name, category_path(category), class:'btn btn-outline-dark'  %>
-      </div>
-    <% end %>
-  </div>
-
 <div class="section content" id="index">
-    <div class="d-flex justify-content-between mb-4">
-      <div class="row">
-        <div class="col-8">
-          <span class="section-highline">Our shop</span>
-          <h3 class="section-title mb-2">Here are our best seller from the stock</h3>
-        </div>
-      </div>
-      <div class="row g-2 mb-3 align-items-end">
-          <div class="col-auto">
-            <%= form_tag ipods_path(anchor: "index"), method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Find an iPod"
-            %>
-          </div>
-          <div class="col-auto">
-            <%= submit_tag "Search", class: "btn btn-dark" %>
-            <% end %>
-          </div>
-      </div>
-    </div>
   <div class="row mb-3">
-    <% @ipods.each do |ipod| %>
+    <% @category.ipods.each do |ipod| %>
       <div class="col-md-3">
         <div class="card">
           <% if ipod.photo.attached? %>
@@ -89,13 +58,6 @@
   </div>
 </div>
 </section>
-<section class="container d-flex mb-4 text-bg-dark hero-content-sm">
-  <div class="col-md-4 px-0 hero-content">
-    <h1>Get inspired from our Instagram</h1>
-    <p class="lead my-3">If you use the hashtag #applepie on Instagram, we’ll spotlight you.</p>
-    <span class="call-to-action">Check it out</span>
-  </div>
-</section>
 <section class="container reviews">
   <div class="row">
     <div class="col">
@@ -118,7 +80,3 @@
     </div>
   </div>
 </section>
-<footer class="footer">
-    <%= image_tag 'applepie-logotype.svg', alt: 'Applepie logotype', class: 'logotype' %>
-    <span class="copyright">Copyright © 2022 applepie All rights Reserved.</span>
-</footer>

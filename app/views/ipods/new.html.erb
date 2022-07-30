@@ -15,7 +15,7 @@
             <%= f.input :description %>
           </div>
           <div class="col-6 mt-0">
-            <%= f.input :model, collection: [ "iPod Classic", "iPod Mini", "iPod Nano", "iPod Shuffle", "iPod Touch" ] %>  <%# Choose between pre-defined models %>
+            <%= f.association :category %>  <%# Choose between pre-defined models %>
           </div>
           <div class="col-6 mt-0">
             <%= f.input :color, collection: [ "Grey", "Black", "White", "Blue", "Green", "Pink" ] %>  <%# Choose between pre-defined colors %>
