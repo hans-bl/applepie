@@ -40,7 +40,7 @@
         <span class="purchase-price"><%= purchase.ipod.price %>€</span>
       </div>
       <div class="d-flex flex-column mb-4">
-        <h3 class="ipod-name">My ipod mini</h3>
+        <h3 class="ipod-name"><%= purchase.ipod.name %></h3>
         <span class="purchase-details"><span class="purchase-details-title">Address: </span><%= purchase.delivery_address %></span>
         <span class="purchase-details"><span class="purchase-details-title">Phone: </span><%= purchase.phone_number %></span>
         <span class="purchase-details"><span class="purchase-details-title">Message: </span><%= purchase.message %></span>
