@@ -5,7 +5,7 @@
   <% if @ipod.photo.attached? %>
     <%= cl_image_tag @ipod.photo.key, class:'card-img img-fluid' %>
   <% else %>
-    <%= image_tag "#{@ipod.model}.png", class:'card-img img-fluid' %>
+    <%= image_tag "#{@ipod.model}.jpg", class:'image'  %>
   <% end %>
 
   </div>

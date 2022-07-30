@@ -1,4 +1,4 @@
-<div class="d-flex mb-4 text-bg-dark hero">
+<div class="container d-flex mb-4 text-bg-dark hero">
   <div class="col-md-5 px-0 my-auto hero-content">
     <h1>Your sweet spot for iPods.</h1>
     <p class="lead my-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, quisquam perferendis!</p>
@@ -7,11 +7,14 @@
 </div>
 
 <div class="section content" id="index">
-  <div class="row mb-5">
-    <div class="col-5">
-      <span class="section-highline">Our shop</span>
-      <h3 class="section-title mb-2">Here are our best seller from the stock</h3>
-      <div class="row g-2 mb-5">
+    <div class="d-flex justify-content-between mb-4">
+      <div class="row">
+        <div class="col-8">
+          <span class="section-highline">Our shop</span>
+          <h3 class="section-title mb-2">Here are our best seller from the stock</h3>
+        </div>
+      </div>
+      <div class="row g-2 mb-3 align-items-end">
           <div class="col-auto">
             <%= form_tag ipods_path(anchor: "index"), method: :get do %>
             <%= text_field_tag :query,
@@ -26,11 +29,10 @@
           </div>
       </div>
     </div>
-  </div>
   <div class="row mb-3">
     <% @ipods.each do |ipod| %>
       <div class="col-md-3">
-        <div class="card" style="width: 14rem;">
+        <div class="card">
           <% if ipod.photo.attached? %>
             <div class="card-img-top-wrapper">
               <span class="card-text-model"><%= ipod.model %></span>
@@ -39,7 +41,7 @@
           <% else %>
             <div class="card-img-top-wrapper">
               <span class="card-text-model"><%= ipod.model %></span>
-              <%= image_tag "#{ipod.model}.png", class:'card-img-top' %>
+              <%= image_tag "#{ipod.model}.jpg", class:'card-img-top' %>
             </div>
           <% end %>
           <div class="card-body">
@@ -77,15 +79,16 @@
       </div>
     <% end %>
   </div>
+</div>
 </section>
-<section class="d-flex mb-4 text-bg-dark hero-content-sm">
+<section class="container d-flex mb-4 text-bg-dark hero-content-sm">
   <div class="col-md-4 px-0 hero-content">
     <h1>Get inspired from our Instagram</h1>
     <p class="lead my-3">If you use the hashtag #applepie on Instagram, we’ll spotlight you.</p>
     <span class="call-to-action">Check it out</span>
   </div>
 </section>
-<section class="reviews">
+<section class="container reviews">
   <div class="row">
     <div class="col">
       <div class="reviews-image"></div>
@@ -100,7 +103,7 @@
         </span>
         <%= image_tag 'reviews-star.svg', alt: 'rating stars', class: 'rating-stars mb-3' %>
         <span class="counter mb-3">2.479 reviews</span>
-        <h3 class="review-content">Great iPod, whatever the microphone is giving me problems, I hope it's nothing and if I see the problem persists I'll have to take it to have it checked</h3>
+        <h3 class="review-content">Great iPod, however the headphone is giving me problems, I hope it's nothing but if it continues I'll get it checked</h3>
         <span class="author">Michael P.</span>
         <span class="locale">Lake Forest, CA</span>
       </div>

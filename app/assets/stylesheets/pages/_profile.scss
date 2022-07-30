@@ -1,0 +1,109 @@
+.profile-data {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  margin: auto;
+  text-align: center;
+  position: relative;
+
+  .profile-icon{
+    width: 24px;
+    height: auto;
+    margin: auto;
+  }
+
+  .my-account {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+
+  .profile-data-content {
+    position: relative;
+    top: 2rem;
+
+    .profile-avatar {
+      position: relative;
+    }
+  }
+}
+
+.profile-page-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  outline: 3px solid #fff;
+}
+
+.profile-page-avatar-edit {
+  position: absolute;
+  bottom: 1rem;
+  right: 2.8rem;
+  background-color: #000;
+  padding: .4rem;
+  border-radius: 50px;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+
+.user-name {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 0px;
+  margin-top: 1rem;
+}
+
+.user-email {
+  color: darken($color: $light-gray, $amount: 40);
+  font-size: 1rem;
+}
+
+.purchases {
+  display: flex;
+  margin-top: 8rem;
+}
+
+.container-profile {
+  max-width: 500px;
+  margin: auto;
+}
+
+.card-horizontal {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid $light-gray;
+
+  .purchase-status {
+    font-size: .85rem;
+    text-transform: capitalize;
+    color: darken($color: $light-gray, $amount: 60);
+    background-color: $light-gray;
+    padding: .2rem .5rem;
+    border-radius: .3rem;
+  }
+
+  .purchase-price {
+    font-size: 1.1rem;
+  }
+
+  .ipod-name {
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+
+  .purchase-details {
+    font-size: .875rem;
+    margin-bottom: .2rem;
+    font-weight: 400;
+    color: darken($color: $light-gray, $amount: 60);
+
+    .purchase-details-title {
+      font-weight: 500;
+    }
+  }
+}

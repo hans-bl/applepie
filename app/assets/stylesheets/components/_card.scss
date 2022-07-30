@@ -50,8 +50,8 @@
   }
 
   .card-img-top{
-    height: 196px;
-    width: 216px;
+    height: 226px;
+    width: 100%;
     border-radius: 2rem;
     object-fit: cover;
     background-color: $light-gray;
@@ -61,7 +61,13 @@
 
 .card-title {
   text-transform: uppercase;
-  font-size: .875rem;
+  font-size: 1rem;
+}
+
+.card-img {
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
 .card-text {
@@ -75,6 +81,11 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .color {
