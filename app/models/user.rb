@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :ipods
-  has_many :ipods, through: :purchases
+  has_many :ipods #ipods that this user owns
+  #has_many :ipods, through: :purchases
   has_many :purchases
   has_one_attached :photo
 
@@ -13,4 +13,5 @@ class User < ApplicationRecord
   # validates :first_name, :last_name, :email, :password, allow_blank: false
   validates :email, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+
 end
