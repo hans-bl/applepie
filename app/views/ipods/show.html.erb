@@ -2,7 +2,7 @@
   <% if @ipod.photo.attached? %>
     <%= cl_image_tag @ipod.photo.key, class:'image' %>
   <% else %>
-    <%= image_tag "#{@ipod.model}.jpg", class:'image'  %>
+    <%= image_tag "#{@ipod.category.name}.jpg", class:'image'  %>
   <% end %>
 
   <div class="content">
@@ -10,7 +10,7 @@
     <p><%= @ipod.description %></p>
 
     <p class="title">Model</p>
-    <p><%= @ipod.model %></p>
+    <p><%= @ipod.category.name %></p>
     <p class="title">State</p>
     <p><%= @ipod.state %></p>
     <p class="title">Color</p>

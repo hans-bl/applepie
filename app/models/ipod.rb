@@ -1,14 +1,15 @@
 class Ipod < ApplicationRecord
   belongs_to :user
   has_many :purchases
+  belongs_to :category
   has_one_attached :photo
 
-  validates :name, :description, :model, :color, :state, :capacity, :price, presence: true
+  validates :name, :description, :color, :state, :capacity, :price, presence: true
   validates :name, length: { minimum: 4 }
   validates :description, length: { minimum: 6 }
-  validates :model, inclusion: {
-    in: ['iPod Classic', 'iPod Mini', 'iPod Nano', 'iPod Shuffle', 'iPod Touch']
-  }
+  # validates :model, inclusion: {
+  #   in: ['iPod Classic', 'iPod Mini', 'iPod Nano', 'iPod Shuffle', 'iPod Touch']
+  # }
   validates :color, inclusion: {
     in: %w[Grey Black White Blue Green Pink]
   }
