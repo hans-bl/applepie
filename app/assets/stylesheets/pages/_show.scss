@@ -1,20 +1,20 @@
 .show-page {
-  max-width: 700px;
   background-color: #fff;
   margin: auto;
 
   .image {
-    width: 100%;
-    object-fit: cover;
+    width: 60%;
+    object-fit: fill;
     height: 250px;
+    padding: 2rem 2rem;
   }
 
   .content {
-    padding: 1rem 2rem;
+    padding: 7rem 2rem;
 
     .title {
       font-weight: 700;
-      font-size: 18px;
+      font-size: 20px;
     }
   }
 }

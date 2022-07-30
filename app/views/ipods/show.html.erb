@@ -1,25 +1,35 @@
-<div class="show-page">
+<div class="modal-body row container show-page">
+  <div class="image container col-8">
+  <h1 class="text-uppercase"><%= @ipod.name %></h1>
+    <p class="text-muted"><%= @ipod.description %></p>
   <% if @ipod.photo.attached? %>
-    <%= cl_image_tag @ipod.photo.key, class:'image' %>
+    <%= cl_image_tag @ipod.photo.key, class:'card-img img-fluid' %>
   <% else %>
-    <%= image_tag "#{@ipod.model}.png", class:'image'  %>
+    <%= image_tag "#{@ipod.model}.png", class:'card-img img-fluid' %>
   <% end %>
 
-  <div class="content">
-    <h1><%= @ipod.name %></h1>
-    <p><%= @ipod.description %></p>
-
-    <p class="title">Model</p>
-    <p><%= @ipod.model %></p>
-    <p class="title">State</p>
-    <p><%= @ipod.state %></p>
-    <p class="title">Color</p>
-    <p><%= @ipod.color %></p>
-    <p class="title">Capacity</p>
-    <p><%= @ipod.capacity %></p>
-    <p class="title">Price</p>
-    <p><%= @ipod.price %></p>
   </div>
-</div>
 
-<%= link_to "Back to index", ipods_path, class: "btn btn-primary"  %>
+  <br><br>
+
+  <div class="col-4 content">
+    <p class="h5 font-weight-light text-muted text-uppercase">Details</p>
+    <br>
+    <p class="title font-weight-bold">Price:</p>
+    <p><%= @ipod.price %>€</p>
+    <p class="title font-weight-bold">Model:</p>
+    <p><%= @ipod.model %></p>
+    <p class="title font-weight-bold">State:</p>
+    <p><%= @ipod.state %></p>
+    <p class="title font-weight-bold">Color:</p>
+    <p><%= @ipod.color %></p>
+    <p class="title font-weight-bold">Capacity:</p>
+    <p><%= @ipod.capacity %></p>
+<br>
+    <a class="btn btn-dark shadow-sm" href="#" role="button"><i class="fa-solid fa-bag-shopping"></i>  l  Buy</a>
+    <br><br>
+    <a class="btn btn-outline-dark shadow-sm" href="#" role="button">Back to List</a>
+</div>
+</div>
+<br><br>
+<%= link_to "Back to index", ipods_path, class: "btn btn-primary"%>
