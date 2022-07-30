@@ -1,20 +1,18 @@
-.show-page {
-  background-color: #fff;
-  margin: auto;
+.title {
+  font-weight: 700;
+}
+.icon-lg {
+  width: 32px;
+  height: auto;
+}
 
-  .image {
-    width: 60%;
-    object-fit: fill;
-    height: 250px;
-    padding: 2rem 2rem;
-  }
+.show-price {
+  font-weight: 300;
+  margin-bottom: 0rem;
+  margin-left: .5rem;
+}
 
-  .content {
-    padding: 2rem 2rem;
-
-    .title {
-      font-weight: 700;
-      font-size: 20px;
-    }
-  }
+.show-action-icon {
+  width: 24px;
+  height: auto;
 }
