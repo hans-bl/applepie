@@ -1,6 +1,9 @@
-<%= simple_form_for [@ipod, @purchase] do |f| %>
-  <%= f.input :delivery_address %>
-  <%= f.input :phone_number %>
-  <%= f.input :message %>
-  <%= f.submit "Buy", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <h1>Complete your purchase</h1>
+  <%= simple_form_for [@ipod, @purchase] do |f| %>
+    <%= f.input :delivery_address %>
+    <%= f.input :phone_number %>
+    <%= f.input :message %>
+    <%= f.submit "Buy", class: "btn btn-dark" %>
+  <% end %>
+</div>

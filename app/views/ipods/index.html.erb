@@ -7,16 +7,12 @@
 </div>
 
 <div class="container">
-  <div class="row mb-3 justify-content-between">
-      <% @categories.each do |category| %>
-        <div class="col-md-2">
-          <%= link_to category.name, category_path(category), class:'btn btn-outline-dark'  %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
 <div class="section content" id="index">
+  <div class="d-flex my-5 justify-content-between">
+    <% @categories.each do |category| %>
+      <%= link_to category.name, category_path(category), class:'btn btn-outline-dark'  %>
+    <% end %>
+  </div>
     <div class="d-flex justify-content-between mb-4">
       <div class="row">
         <div class="col-8">
