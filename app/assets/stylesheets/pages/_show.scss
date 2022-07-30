@@ -1,20 +1,18 @@
-.show-page {
-  max-width: 700px;
-  background-color: #fff;
-  margin: auto;
+.title {
+  font-weight: 700;
+}
+.icon-lg {
+  width: 32px;
+  height: auto;
+}
 
-  .image {
-    width: 100%;
-    object-fit: cover;
-    height: 250px;
-  }
+.show-price {
+  font-weight: 300;
+  margin-bottom: 0rem;
+  margin-left: .5rem;
+}
 
-  .content {
-    padding: 1rem 2rem;
-
-    .title {
-      font-weight: 700;
-      font-size: 18px;
-    }
-  }
+.show-action-icon {
+  width: 24px;
+  height: auto;
 }

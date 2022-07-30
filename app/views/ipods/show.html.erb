@@ -1,26 +1,39 @@
-<div class="show-page">
-  <% if @ipod.photo.attached? %>
-    <%= cl_image_tag @ipod.photo.key, class:'image' %>
-  <% else %>
-    <%= image_tag "#{@ipod.category.name}.jpg", class:'image'  %>
-  <% end %>
+<div class="container">
+  <div class="row my-5 show-page">
+    <div class="col-6">
+      <% if @ipod.photo.attached? %>
+        <%= cl_image_tag @ipod.photo.key, class:'card-img' %>
+      <% else %>
+        <%= image_tag "#{@ipod.model}.jpg", class:'card-img'  %>
+      <% end %>
+    </div>
+    <div class="col-5 ps-5 mt-2">
+      <div class="d-flex align-items-center mb-2">
+        <%= image_tag 'icon-cash.svg', alt: 'money icon', class: 'icon-lg' %>
+        <h5 class="show-price"><%= @ipod.price %>€</h5>
+      </div>
+      <h1 class="text-uppercase"><%= @ipod.name %></h1>
+      <p class="text-muted"><%= @ipod.description %></p>
+      <p class="h6 font-weight-light text-muted text-uppercase mt-4">Details</p>
+      <div class="d-flex mt-3">
+        <p class="me-2"><span class="title">Model:</span> <%= @ipod.model %></p>
+      </div>
+      <div class="d-flex">
+        <p class="me-2"><span class="title">State:</span> <%= @ipod.state %></p>
+      </div>
+      <div class="d-flex">
+        <p class="me-2"><span class="title">Color:</span> <%= @ipod.color %></p>
+      </div>
+      <div class="d-flex">
+        <p class="me-2"><span class="title">Capacity:</span> <%= @ipod.capacity %></p>
+      </div>
 
-  <div class="content">
-    <h1><%= @ipod.name %></h1>
-    <p><%= @ipod.description %></p>
-
-    <p class="title">Model</p>
-    <p><%= @ipod.category.name %></p>
-    <p class="title">State</p>
-    <p><%= @ipod.state %></p>
-    <p class="title">Color</p>
-    <p><%= @ipod.color %></p>
-    <p class="title">Capacity</p>
-    <p><%= @ipod.capacity %></p>
-    <p class="title">Price</p>
-    <p><%= @ipod.price %></p>
+      <div class="mt-4">
+        <%= link_to ipod_path(@ipod), class:'btn btn-dark w-100 mb-2 py-2' do %>
+          <%= image_tag 'icon-shop.svg', alt: 'buy icon', class: 'show-action-icon' %>
+          <span>Buy</span>
+        <% end %>
+        <%= link_to 'Back to list', ipods_path, class:'btn btn-outline-dark w-100 py-2' %>
+      </div>
   </div>
 </div>
-
-<%= link_to "Back to index", ipods_path, class: "btn btn-outlined-dark"  %>
-<%= link_to "Edit", edit_ipod_path, class: "btn btn-dark"  %>
