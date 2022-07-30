@@ -6,12 +6,14 @@
   </div>
 </div>
 
-<div class="row mb-3">
-    <% @categories.each do |category| %>
-      <div class="col-md-3">
-        <%= link_to category.name, category_path(category), class:'btn btn-outline-dark'  %>
-      </div>
-    <% end %>
+<div class="container">
+  <div class="row mb-3 justify-content-between">
+      <% @categories.each do |category| %>
+        <div class="col-md-2">
+          <%= link_to category.name, category_path(category), class:'btn btn-outline-dark'  %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
 <div class="section content" id="index">
